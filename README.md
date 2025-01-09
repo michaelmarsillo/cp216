@@ -4,7 +4,7 @@
 My classwork for cp216 in the 2024/25 school year.
 
 ## Resource
-[![Assembly Full Course](https://m.media-amazon.com/images/M/MV5BYTk4NTU1ODAtMjE1Ny00ODliLWE2ZmMtMGYzYmUzMDlmZWI2XkEyXkFqcGc@._V1_.jpg)](https://www.youtube.com/watch?v=gfmRrPjnEw4)<br/>
+[![Assembly Full Course](https://www.dexerto.com/cdn-image/wp-content/uploads/2024/01/16/Berserk-1997-casca-griffith-guts-golden-age.jpg)](https://www.youtube.com/watch?v=gfmRrPjnEw4)<br/>
 Click ^
 
 ## Disclaimer
