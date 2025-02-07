@@ -1,0 +1,41 @@
+-------------------------------------------------------
+answers.txt
+-------------------------------------------------------
+Author: Michael Marsillo 
+ID: 169057769      
+Email: mars7769@mylaurier.ca  
+Date: 2025/02/06   
+-------------------------------------------------------
+Answers for Lab 3
+-------------------------------------------------------
+
+Task 1
+bge TOP         // Branch to TOP if > 0 // Change to bge (branch greater than or equal to)
+// The value in r3 when the loop is done is -1 or 0xffffffff
+
+
+Task 2
+ldr r3, =COUNTER // Load address
+ldr r3, [r3]    // Load value stored at COUNTER into r3
+
+// The address of COUNTER in hex is 00001020 or 0x1020
+
+.data          // Define memory locations
+COUNTER:
+.word 5
+
+
+
+Task 3
+// removed .equ LED_BITS
+ldr r2, =LED_BITS   // value to set LEDs
+ldr r2, [r2]        // Load LED pattern from memory
+ldr r3, =DELAY_TIME  // timeout = 1/(200 MHz) x 200x10^6 = 1 sec
+ldr r3, [r3]        // Load delay time from memory
+
+// Before LED_BITS was hardcoded using .equ now it is stored in .data and can be changed dynamically
+// Before 200000000 was hardcoded in the r3 loader, it is now stored in .data and can load at runtime
+
+.data                // Define memory locations
+LED_BITS: .word 0x0F0F0F0F  // Memory location for LED_BITS
+DELAY_TIME: .word 200000000 // Memory location for delay time
