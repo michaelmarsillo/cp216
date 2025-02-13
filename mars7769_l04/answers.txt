@@ -1,0 +1,57 @@
+-------------------------------------------------------
+answers.txt
+-------------------------------------------------------
+Author: Michael Marsillo 
+ID: 169057769      
+Email: mars7769@mylaurier.ca  
+Date: 2025/02/13  
+-------------------------------------------------------
+Answers for Lab 4
+-------------------------------------------------------
+
+Task 1
+// Initialize sum r1 to 0
+
+Loop:
+ldr    r0, [r2], #4 // Read address with post-increment (r0 = *r2, r2 += 4)
+add    r1, r1, r0   // Add value in r0 to sum in r1
+cmp    r3, r2       // Compare current address with end of list
+bne    Loop         // If not at end, continue
+
+
+
+Task 2
+mov    r4, #0       // Initialize sum to 0
+sub    r5, r3, r2   // Adds total bytes in list 
+
+Loop:
+ldr    r0, [r2], #4 // Read address with post-increment (r0 = *r2, r2 += 4)
+add    r4, r4, #1   // Increment count (new line added)
+cmp    r3, r2       // Compare current address with end of list
+bne    Loop         // If not at end, continue
+
+// Yes you can determine the number of bytes in the list without using the loop.
+// Since each element in the list is a 4 byte word, you can multiply each element by 4
+
+
+Task 3
+sub    r5, r3, r2   // Adds total bytes in list 
+mov    r4, #1       // Initialize count to count 1
+
+ldr    r6, [r2], #4 // Load first value as initial min
+mov    r7, r6       // Copy first value as initial max
+
+Loop:
+cmp    r2, r3       // Check if we have reached the end
+bge    _stop        // If r2 >= r3, exit loop
+
+ldr    r0, [r2], #4 // Load next value and increment address
+add    r4, r4, #1   // Increment count
+
+cmp    r0, r6       // Compare current value with min
+movlt  r6, r0       // If r0 < r6, update min
+
+cmp    r0, r7       // Compare current value with max
+movgt  r7, r0       // If r0 > r7, update max
+
+b      Loop         // Repeat loop
