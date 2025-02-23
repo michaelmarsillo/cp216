@@ -1,0 +1,39 @@
+-------------------------------------------------------
+answers.txt
+-------------------------------------------------------
+Author: Michael Marsillo 
+ID: 169057769      
+Email: mars7769@mylaurier.ca  
+Date: 2025/02/23 
+-------------------------------------------------------
+Answers for Lab 5
+-------------------------------------------------------
+
+Task 1
+// Initialize sum to 0
+// Check if we have reached the end
+// if yes, ext
+// Load current element into r3 and move to the next
+// Add r3 to running sum
+// Keep looping
+// return statement
+
+
+
+Task 2
+// Preserve registers
+// Check if start address reached end address
+// If equal, exit loop
+// Load value from memory and advance pointer
+// Compare value with 0
+// If 0, branch to count_zero
+// If negative, branch to count_neg
+// Increment positive count
+// Continue loop
+// Increment zero count
+// Continue loop
+// Increment negative count
+// Continue loop
+// Restore registers
+// Return
+
