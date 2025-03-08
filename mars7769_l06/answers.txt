@@ -1,0 +1,50 @@
+-------------------------------------------------------
+answers.txt
+-------------------------------------------------------
+Author: Michael Marsillo 
+ID: 169057769      
+Email: mars7769@mylaurier.ca  
+Date: 2025/03/07 
+-------------------------------------------------------
+Answers for Lab 6
+-------------------------------------------------------
+
+Task 1
+// Save registers r1 to r5 and link register
+// Load address of first string (was third pushed)
+// Load address of second string (was second pushed)
+// Load max buffer size (was first pushed)
+// Initialize result to strings equal
+// Restore registers properly
+// Return to caller
+
+
+
+Task 2
+// Address of start of list
+// Address of end of list
+// Address to store minimum
+// Address to store maximum
+// Push max address
+// Push min address
+// Push end of list address
+// Push start of list address
+// Remove parameters from stack
+
+
+
+Task 3
+// Load address of first string
+// Load address of second string
+// Load address to store common prefix
+// Load max size of common prefix
+// Push parameters onto stack
+// Clean up the stack (remove parameters)
+// Save frame pointer and return address
+// Set new frame pointer
+// Load parameters from stack
+// Restore frame pointer and return address
+// Return
+
+
+
