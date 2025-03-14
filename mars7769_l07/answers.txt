@@ -1,0 +1,84 @@
+-------------------------------------------------------
+answers.txt
+-------------------------------------------------------
+Author: Michael Marsillo 
+ID: 169057769      
+Email: mars7769@mylaurier.ca  
+Date: 2025/03/07 
+-------------------------------------------------------
+Answers for Lab 7
+-------------------------------------------------------
+
+Task 1
+stmfd   sp!, {lr}     // push LR so we don't lose the return address
+
+bl      isLowerCase     // test for lowercase
+cmp     r0, #0
+bne 	done
+bl		isUpperCase     // not lowercase? Test for uppercase.
+
+done:
+
+ldmfd 	sp!, {lr}	// pop LR (restore our caller's address)
+bx 	lr			// return to our caller
+
+
+
+Task 2
+stmfd   sp!, {r4, r5, r6, lr}
+
+cmp r4, r5
+bge Pal_True
+
+ldrb r2, [r4] // Check if the first character is alphanumeric
+bl isLetter
+cmp r0, #0  // Is the current letter *not* alphanumeric?
+beq skipLeft
+
+ldrb r2, [r5] // Check if the first character is alphanumeric
+bl isLetter
+cmp r0, #0 // Is the last letter *not* alphanumeric?
+beq skipRight
+
+cmp r4, r5
+bge Pal_True
+
+ldrb r2, [r4] // Convert first character to lowercase
+bl toLower
+mov r6, r2
+
+ldrb r2, [r5] // Convert last character to lowercase
+bl toLower
+cmp r6, r2
+bne Pal_False
+
+add r4, r4, #1
+sub r5, r5, #1
+bl Palindrome
+b Pal_Done
+
+
+
+skipRight:
+sub r5, r5, #1
+bl Palindrome
+b Pal_Done
+
+skipLeft:
+add r4, r4, #1
+bl Palindrome
+b Pal_Done
+
+Pal_True:
+mov r0, #1
+b Pal_Done
+
+Pal_False:
+mov r0, #0
+b Pal_Done
+
+Pal_Done:
+ldmfd   sp!, {r4, r5, r6, lr}
+bx      lr
+
+
