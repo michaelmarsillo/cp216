@@ -1,0 +1,51 @@
+-------------------------------------------------------
+answers.txt
+-------------------------------------------------------
+Author: Michael Marsillo 
+ID: 169057769      
+Email: mars7769@mylaurier.ca  
+Date: 2025/03/07 
+-------------------------------------------------------
+Answers for Lab 9
+-------------------------------------------------------
+
+Timer Setting
+// Load the period low (lower 16 bits)
+// low 16 bits
+// write to PeriodL (TIMER_BASE + 0x8)
+// Load the period high (upper 16 bits)
+// high 16 bits
+// write to PeriodH (TIMER_BASE + 0xC)
+// Enable the timer: bits [3:0] = 0b1111
+// bit 3 = stop (0), bit 2 = start (1), bit 1 = continue (1), bit 0 = interrupt enable (1)
+// -> Control = 0b111 = 0x7
+// write to Control register (TIMER_BASE + 0x4)
+
+
+
+Inter Timer ISR
+// Save registers R0-R2 and Link Register
+// Load UART base address into R0
+// Load ASCII 'T'
+// Write 'T' to UART
+// Load ASCII 'i'
+// Write 'i' to UART
+// Load ASCII 'm'
+// Write 'm' to UART
+// Load ASCII 'e'
+// Write 'e' to UART
+// Load ASCII 'o'
+// Write 'o' to UART
+// Load ASCII 'u'
+// Write 'u' to UART
+// Load ASCII 't'
+// Write 't' to UART
+// Load newline character (0x0A)
+// Write newline to UART
+// Load Timer base address into R0
+// Clear value (used to reset timeout flag)
+// Write to Status Register to clear the timeout bit
+// Restore R0-R2 and LR from the stack
+// Return from IRQ (adjusted to properly restore CPSR)
+
+
